@@ -1,8 +1,7 @@
 const { Schema, model } = require('mongoose');
-const { data } = require('react-router-dom');
 
 const todoSchema = Schema({
-  title: { type: String, requred: true },
+  title: { type: String, required: true }, // Fixed typo: "requred" → "required"
   date: String,
   priority: { type: String, default: 'lower' },
   time: { type: String, required: true, default: '10:30:3' },
