@@ -1,0 +1,52 @@
+.sidebar {
+  background-color: #2a2a2a;
+  width: 280px;
+  height: 100vh;
+  padding: 4px;
+  position: relative;
+  transition: all 1s;
+  padding-top: 30px;
+}
+.sidebar ol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar .sidebar-row {
+  border: 1px solid rgb(65, 65, 65);
+  width: 97%;
+  padding: 5px;
+  height: 28px;
+  font-size: 13px;
+}
+
+.sidebar .sidebar-row:hover {
+  background-color: #4c4c4c;
+  cursor: pointer;
+}
+
+.sidebar .sidebar-row.active {
+  background-color: #808080;
+  color: black;
+  font-weight: bold;
+}
+
+.fa-x {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+}
+
+.sign {
+  position: absolute;
+  bottom: 20px;
+  /* left: 12px; */
+  border: 1px solid rgb(59, 59, 59);
+  width: 98%;
+  cursor: pointer;
+}
+
+.sign:hover {
+  background-color: #4c4c4c;
+}

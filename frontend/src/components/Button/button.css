@@ -1,0 +1,13 @@
+.add-btn {
+  width: 100px;
+  height: 54px;
+  margin-top: 180px;
+  border-radius: 20px;
+  border: none;
+}
+.add-btn:hover {
+  background-color: lightskyblue;
+}
+.add-btn:active {
+  transform: scale(0.9);
+}
