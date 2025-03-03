@@ -32,9 +32,12 @@ const App = () => {
   console.log(data);
 
   const onAddclick = async () => {
-    const response = await axios.post('http://localhost:3000/api/addtodo', {
-      title: data,
-    });
+    const response = await axios.post(
+      'https://todo-54cn.onrender.com/api/addtodo',
+      {
+        title: data,
+      }
+    );
     setTodos([...todos, response.data.data]);
     setData('');
     const audio = new Audio('/sound/notificationTone.mp3');
@@ -44,7 +47,7 @@ const App = () => {
 
   const gettodos = async () => {
     const response = await axios.get(
-      'http://localhost:3000/api/showtodo?sortorder=desc'
+      'https://todo-54cn.onrender.com/api/showtodo?sortorder=desc'
     );
     // console.log(response.data);
     setTodos(response.data);
@@ -64,7 +67,7 @@ const App = () => {
   const onDeleteClick02 = async id => {
     try {
       const response = await axios.delete(
-        'http://localhost:3000/api/deletetodo/' + id
+        'https://todo-54cn.onrender.com/api/deletetodo/' + id
       );
       if (response.status === 200) {
         const filteredData = todos.filter(todo => todo._id !== id);
@@ -90,12 +93,12 @@ const App = () => {
     console.log(id);
     try {
       const response = await axios.patch(
-        'http://localhost:3000/api/edittodo/' + id,
+        'https://todo-54cn.onrender.com/api/edittodo/' + id,
         { title: changeText } // Include the updated text in the request body
       );
       if (response.status === 200) {
         const updatedTodos = await axios.get(
-          'http://localhost:3000/api/showtodo'
+          'https://todo-54cn.onrender.com/api/showtodo'
         );
         setTodos(updatedTodos.data);
       }
@@ -112,12 +115,12 @@ const App = () => {
     setPri('high');
     try {
       const response = await axios.patch(
-        'http://localhost:3000/api/edittodo/' + id,
+        'https://todo-54cn.onrender.com/api/edittodo/' + id,
         { priority: pri } // Include the updated text in the request body
       );
       if (response.status === 200) {
         const updatedTodos = await axios.get(
-          'http://localhost:3000/api/showtodo'
+          'https://todo-54cn.onrender.com/api/showtodo'
         );
         setTodos(updatedTodos.data);
       }
@@ -138,7 +141,7 @@ const App = () => {
 
   const onImpClick = async () => {
     const response = await axios.get(
-      'http://localhost:3000/api/showtodo?sortby=priority'
+      'https://todo-54cn.onrender.com/api/showtodo?sortby=priority'
     );
     setTodos(response.data);
     handleRowClick('important');
@@ -146,7 +149,7 @@ const App = () => {
 
   const onFilterClick = async () => {
     const response = await axios.get(
-      'http://localhost:3000/api/showtodo?priority=high'
+      'https://todo-54cn.onrender.com/api/showtodo?priority=high'
     );
     setTodos(response.data);
     handleRowClick('filter');
